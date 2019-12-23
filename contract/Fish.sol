@@ -16,6 +16,7 @@ contract Fish {
     event newUserEvent(address indexed from, string name, uint256 timestamp);
     event deleteUserEvent(address indexed from, string name, uint256 timestamp);
     event updateUserEvent(address indexed from, string name, uint256 timestamp);
+    event LoginEvent(address indexed from, uint256 timestamp);
 
     modifier isOwner() {
         require(owner == msg.sender, "you are not owner");
@@ -28,7 +29,8 @@ contract Fish {
     }
     
     // 確認用戶是否已存在 and 登入
-    function isUser(address userAddress) public view returns (bool) {
+    function isUser(address userAddress) public returns (bool) {
+        if(userStructs[userAddress].isUser) emit LoginEvent(userAddress, now);
         return userStructs[userAddress].isUser;
     }
 
