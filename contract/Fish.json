@@ -1,0 +1,307 @@
+{
+    "abi" : [
+    {
+        "inputs": [],
+        "payable": true,
+        "stateMutability": "payable",
+        "type": "constructor"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "value",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "timestamp",
+                "type": "uint256"
+            }
+        ],
+        "name": "BuyCoinEvent",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "value",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "timestamp",
+                "type": "uint256"
+            }
+        ],
+        "name": "MintEvent",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "value",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "timestamp",
+                "type": "uint256"
+            }
+        ],
+        "name": "TransferCoinEvent",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "oldOwner",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newOwner",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "timestamp",
+                "type": "uint256"
+            }
+        ],
+        "name": "TransferOwnerEvent",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "timestamp",
+                "type": "uint256"
+            }
+        ],
+        "name": "deleteUserEvent",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "timestamp",
+                "type": "uint256"
+            }
+        ],
+        "name": "newUserEvent",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "timestamp",
+                "type": "uint256"
+            }
+        ],
+        "name": "updateUserEvent",
+        "type": "event"
+    },
+    {
+        "constant": false,
+        "inputs": [],
+        "name": "deleteUser",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "userAddress",
+                "type": "address"
+            }
+        ],
+        "name": "isUser",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "userName",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "userPwd",
+                "type": "string"
+            }
+        ],
+        "name": "newUser",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "userPwd",
+                "type": "string"
+            }
+        ],
+        "name": "updateUser",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "success",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "name": "userStructs",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "userName",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "userPwd",
+                "type": "string"
+            },
+            {
+                "internalType": "bool",
+                "name": "isUser",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    }
+],
+    "bytecode" : "0x6080604052600080546001600160a01b031916331790556108cc806100256000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c8063026ff05e1461005c5780630b4f12f61461007857806319447eb61461011e5780631f34563c1461022d5780634209fff11461035a575b600080fd5b610064610380565b604080519115158252519081900360200190f35b6100646004803603602081101561008e57600080fd5b8101906020810181356401000000008111156100a957600080fd5b8201836020820111156100bb57600080fd5b803590602001918460018302840111640100000000831117156100dd57600080fd5b91908080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525092955061046c945050505050565b6101446004803603602081101561013457600080fd5b50356001600160a01b0316610573565b60405180806020018060200184151515158152602001838103835286818151815260200191508051906020019080838360005b8381101561018f578181015183820152602001610177565b50505050905090810190601f1680156101bc5780820380516001836020036101000a031916815260200191505b50838103825285518152855160209182019187019080838360005b838110156101ef5781810151838201526020016101d7565b50505050905090810190601f16801561021c5780820380516001836020036101000a031916815260200191505b509550505050505060405180910390f35b6100646004803603604081101561024357600080fd5b81019060208101813564010000000081111561025e57600080fd5b82018360208201111561027057600080fd5b8035906020019184600183028401116401000000008311171561029257600080fd5b91908080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525092959493602081019350359150506401000000008111156102e557600080fd5b8201836020820111156102f757600080fd5b8035906020019184600183028401116401000000008311171561031957600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506106b6945050505050565b6100646004803603602081101561037057600080fd5b50356001600160a01b03166107de565b600061038b336107de565b61039457600080fd5b336000818152600160208181526040928390206002808201805460ff191690558451429381018490528581528254600019958116156101000295909501909416049383018490527f7eee95c3315a41e8ea4c202ae9c3e072d8632128af47abe56e6aa59008a471c19390929081906060820190859080156104565780601f1061042b57610100808354040283529160200191610456565b820191906000526020600020905b81548152906001019060200180831161043957829003601f168201915b5050935050505060405180910390a25060015b90565b6000610477336107de565b61048057600080fd5b33600090815260016020818152604090922084516104a6939190920191908501906107ff565b50336000818152600160208181526040928390208351429281018390528481528154600294811615610100026000190116939093049383018490527f09862b8be38912c85c5c844c5702dbcc73df1cd13424d1306c5196a87457d1e193909290819060608201908590801561055c5780601f106105315761010080835404028352916020019161055c565b820191906000526020600020905b81548152906001019060200180831161053f57829003601f168201915b5050935050505060405180910390a2506001919050565b60016020818152600092835260409283902080548451600294821615610100026000190190911693909304601f81018390048302840183019094528383529283918301828280156106055780601f106105da57610100808354040283529160200191610605565b820191906000526020600020905b8154815290600101906020018083116105e857829003601f168201915b505050505090806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156106a35780601f10610678576101008083540402835291602001916106a3565b820191906000526020600020905b81548152906001019060200180831161068657829003601f168201915b5050506002909301549192505060ff1683565b60006106c1336107de565b156106cb57600080fd5b33600090815260016020908152604090912084516106eb928601906107ff565b503360009081526001602081815260409092208451610712939190920191908501906107ff565b50336000818152600160208181526040808420600201805460ff191690931790925581514281830181905283825288519382019390935287517fccc389b1c817c698634f64b2e502c72a60449d53c1218ad4e60a2d1df65e0b1e9489949383926060840192918701918190849084905b8381101561079a578181015183820152602001610782565b50505050905090810190601f1680156107c75780820380516001836020036101000a031916815260200191505b50935050505060405180910390a250600192915050565b6001600160a01b031660009081526001602052604090206002015460ff1690565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061084057805160ff191683800117855561086d565b8280016001018555821561086d579182015b8281111561086d578251825591602001919060010190610852565b5061087992915061087d565b5090565b61046991905b80821115610879576000815560010161088356fea265627a7a723158209e79dd2e0dfe2f096134cf098f2511ec5c2bc736a7f9d5bca19ea3f8d2f2007564736f6c634300050c0032"
+}
+
