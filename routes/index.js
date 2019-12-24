@@ -32,7 +32,7 @@ router.post('/register', function (req, res, next) {
 router.post('/login', function (req, res, next) {
    let fish = new web3.eth.Contract(contract.abi);
   	fish.options.address = req.body.address;
-  	fish.methods.isUser(req.body.account).send({
+  	fish.methods.Login(req.body.userName, req.body.userPwd).send({
     	from: req.body.account,
     	gas: 3400000,
   	})

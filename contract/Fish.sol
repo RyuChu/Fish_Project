@@ -16,7 +16,7 @@ contract Fish {
     event newUserEvent(address indexed from, string name, uint256 timestamp);
     event deleteUserEvent(address indexed from, string name, uint256 timestamp);
     event updateUserEvent(address indexed from, string name, uint256 timestamp);
-    event LoginEvent(address indexed from, uint256 timestamp);
+    event LoginEvent(address indexed from, string name, uint256 timestamp);
 
     modifier isOwner() {
         require(owner == msg.sender, "you are not owner");
@@ -28,9 +28,8 @@ contract Fish {
         owner = msg.sender;
     }
     
-    // 確認用戶是否已存在 and 登入
+    // 確認用戶是否已存在
     function isUser(address userAddress) public returns (bool) {
-        if(userStructs[userAddress].isUser) emit LoginEvent(userAddress, now);
         return userStructs[userAddress].isUser;
     }
 
@@ -61,5 +60,15 @@ contract Fish {
         
         emit updateUserEvent(msg.sender, userStructs[msg.sender].userName, now);
         return true;
+    }
+    
+    // 登入
+    function Login(string memory userName, string memory userPwd) public returns (bool) {
+        if(keccak256(abi.encodePacked(userStructs[msg.sender].userName)) == keccak256(abi.encodePacked(userName)))
+            if(keccak256(abi.encodePacked(userStructs[msg.sender].userPwd)) == keccak256(abi.encodePacked(userPwd))){
+                emit LoginEvent(msg.sender, userName, now);
+                return true;
+            }
+        return false;
     }
 }
