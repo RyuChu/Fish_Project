@@ -71,4 +71,9 @@ contract Fish {
             }
         return false;
     }
+    
+    // 取得帳戶資料
+    function getData() public view returns (string memory){
+        return userStructs[msg.sender].userName;
+    }
 }

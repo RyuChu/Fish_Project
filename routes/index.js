@@ -14,34 +14,42 @@ router.get('/', function(req, res, next) {
 
 //register
 router.post('/register', function (req, res, next) {
-  	let fish = new web3.eth.Contract(contract.abi);
-  	fish.options.address = req.body.address;
-  	fish.methods.newUser(req.body.userName, req.body.userPwd).send({
-    	from: req.body.account,
-    	gas: 3400000,
-  	})
-    .on('receipt', function (receipt) {
-      res.send(receipt);
-    })
-    .on('error', function (error) {
-      res.send(error.toString());
-    })
+  let fish = new web3.eth.Contract(contract.abi);
+  fish.options.address = req.body.address;
+  fish.methods.newUser(req.body.userName, req.body.userPwd).send({
+    from: req.body.account,
+    gas: 3400000,
+  })
+  .on('receipt', function (receipt) {
+    res.send(receipt);
+  })
+  .on('error', function (error) {
+    res.send(error.toString());
+  })
 });
 
 //login
 router.post('/login', function (req, res, next) {
-   let fish = new web3.eth.Contract(contract.abi);
-  	fish.options.address = req.body.address;
-  	fish.methods.Login(req.body.userName, req.body.userPwd).send({
-    	from: req.body.account,
-    	gas: 3400000,
-  	})
-    .on('receipt', function (receipt) {
-      res.send(receipt);
-    })
-    .on('error', function (error) {
-      res.send(error.toString());
-    })
+  let fish = new web3.eth.Contract(contract.abi);
+  fish.options.address = req.body.address;
+  fish.methods.Login(req.body.userName, req.body.userPwd).send({
+    from: req.body.account,
+    gas: 3400000,
+  })
+  .on('receipt', function (receipt) {
+    res.send(receipt);
+  })
+  .on('error', function (error) {
+    res.send(error.toString());
+  })
+});
+
+//reload
+router.get('/reload', async function (req, res, next) {
+  let fish = new web3.eth.Contract(contract.abi);
+  fish.options.address = req.query.address;
+  let userName = await fish.methods.getData().call({ from: req.query.account });
+  res.send(userName);
 });
 
 module.exports = router;
