@@ -52,4 +52,50 @@ router.get('/reload', async function (req, res, next) {
   res.send(userName);
 });
 
+//newCard
+router.post('/newCard_Easy', function (req, res, next) {
+  let fish = new web3.eth.Contract(contract.abi);
+  fish.options.address = req.body.address;
+  fish.methods.newCard_Easy(req.body.reward).send({
+    from: req.body.account,
+    gas: 3400000,
+  })
+  .on('receipt', function (receipt) {
+    res.send(receipt);
+  })
+  .on('error', function (error) {
+    res.send(error.toString());
+  })
+});
+
+router.post('/newCard_Medium', function (req, res, next) {
+  let fish = new web3.eth.Contract(contract.abi);
+  fish.options.address = req.body.address;
+  fish.methods.newCard_Medium(req.body.reward).send({
+    from: req.body.account,
+    gas: 3400000,
+  })
+  .on('receipt', function (receipt) {
+    res.send(receipt);
+  })
+  .on('error', function (error) {
+    res.send(error.toString());
+  })
+});
+
+router.post('/newCard_Hard', function (req, res, next) {
+  let fish = new web3.eth.Contract(contract.abi);
+  fish.options.address = req.body.address;
+  fish.methods.newCard_Hard(req.body.reward).send({
+    from: req.body.account,
+    gas: 3400000,
+  })
+  .on('receipt', function (receipt) {
+    res.send(receipt);
+  })
+  .on('error', function (error) {
+    res.send(error.toString());
+  })
+});
+
 module.exports = router;

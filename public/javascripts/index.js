@@ -12,8 +12,8 @@ let easy = $('#easy');
 let medium = $('#medium');
 let hard = $('#hard');
 
-let fishAddress = "0x726E37bF199b1fBe448D3ff0f8EfF64ca0892A1B";
-let nowAccount = "0x9Fc9E3248746906899382DBC237824eE2EfA5AE8";
+let fishAddress = "0x50173AE505edA9c54a48D08cd7fE2dF3ea8BD1b8";
+let nowAccount = "0x683D652Ade780785beab942ABf43BB094107f63B";
 
 // 當按下註冊時
 register.on('click', function () {
@@ -116,6 +116,7 @@ hard.on('click', function () {
 
 // 猜數字時
 guess.on('click', function () {
+	alert(QUESTION);
 	var legal = checkValueIsLegal();
 
 	if(legal){
@@ -142,14 +143,61 @@ guess.on('click', function () {
 			//BINGO, 遊戲結束
 			if(Apoint == numLen){
 				alert("恭喜你成功了!!");
-				var reward = Math.floor((Math.random() * 10) + 1);
-				alert(reward);
-				// $.get('/reload', {
-				// 	address: fishAddress,
-				// 	account: nowAccount
-				// }, function (result) {
-				// 	alert(result);
-				// })
+				if(level == 'easy'){
+					var reward = Math.floor((Math.random() * 10) + 1);
+					alert(reward);
+					$.post('/newCard_Easy', {
+						address: fishAddress,
+						account: nowAccount,
+						reward: reward
+					}, function(result) {
+						if (result.events !== undefined) {
+							console.log(result.events.newCardEvent.returnValues, '新增卡片成功')
+
+							alert("取得卡片");
+						}
+						else {
+							alert("取得失敗");
+							console.log(result)
+						}
+					})
+				}else if(level == 'medium'){
+					var reward = Math.floor((Math.random() * 10) + 11);
+					alert(reward);
+					$.post('/newCard_Medium', {
+						address: fishAddress,
+						account: nowAccount,
+						reward: reward
+					}, function(result) {
+						if (result.events !== undefined) {
+							console.log(result.events.newCardEvent.returnValues, '新增卡片成功')
+
+							alert("取得卡片");
+						}
+						else {
+							alert("取得失敗");
+							console.log(result)
+						}
+					})
+				}else if(level == 'hard'){
+					var reward = Math.floor((Math.random() * 10) + 21);
+					alert(reward);
+					$.post('/newCard_Hard', {
+						address: fishAddress,
+						account: nowAccount,
+						reward: reward
+					}, function(result) {
+						if (result.events !== undefined) {
+							console.log(result.events.newCardEvent.returnValues, '新增卡片成功')
+
+							alert("取得卡片");
+						}
+						else {
+							alert("取得失敗");
+							console.log(result)
+						}
+					})
+				}
 			}
 
 			times--;
