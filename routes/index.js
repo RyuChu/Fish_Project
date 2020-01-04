@@ -49,7 +49,15 @@ router.get('/reload', async function (req, res, next) {
   let fish = new web3.eth.Contract(contract.abi);
   fish.options.address = req.query.address;
   let userName = await fish.methods.getData().call({ from: req.query.account });
-  res.send(userName);
+  let cards_Easy = await fish.methods.getCard_Easy().call({ from: req.query.account });
+  let cards_Medium = await fish.methods.getCard_Medium().call({ from: req.query.account });
+  let cards_Hard = await fish.methods.getCard_Hard().call({ from: req.query.account });
+  res.send({
+    userName: userName,
+    cards_Easy: cards_Easy,
+    cards_Medium: cards_Medium,
+    cards_Hard: cards_Hard
+  });
 });
 
 //newCard

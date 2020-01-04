@@ -12,8 +12,8 @@ let easy = $('#easy');
 let medium = $('#medium');
 let hard = $('#hard');
 
-let fishAddress = "0x50173AE505edA9c54a48D08cd7fE2dF3ea8BD1b8";
-let nowAccount = "0x683D652Ade780785beab942ABf43BB094107f63B";
+let fishAddress = "0x7ce18C8bF7653AC5a0Fd8DBa7C8ed74812880538";
+let nowAccount = "0xb92BEBfD778db483706e8722c789982bA1F1B519";
 
 // 當按下註冊時
 register.on('click', function () {
@@ -71,7 +71,37 @@ reload.on('click', function () {
 		address: fishAddress,
 		account: nowAccount
 	}, function (result) {
-		txtUserName.text(result);
+		txtUserName.text(result.userName);
+		$('#a').text(result.cards_Easy[0]);
+		$('#b').text(result.cards_Easy[1]);
+		$('#c').text(result.cards_Easy[2]);
+		$('#d').text(result.cards_Easy[3]);
+		$('#e').text(result.cards_Easy[4]);
+		$('#f').text(result.cards_Easy[5]);
+		$('#g').text(result.cards_Easy[6]);
+		$('#h').text(result.cards_Easy[7]);
+		$('#i').text(result.cards_Easy[8]);
+		$('#j').text(result.cards_Easy[9]);
+		$('#aa').text(result.cards_Medium[0]);
+		$('#bb').text(result.cards_Medium[1]);
+		$('#cc').text(result.cards_Medium[2]);
+		$('#dd').text(result.cards_Medium[3]);
+		$('#ee').text(result.cards_Medium[4]);
+		$('#ff').text(result.cards_Medium[5]);
+		$('#gg').text(result.cards_Medium[6]);
+		$('#hh').text(result.cards_Medium[7]);
+		$('#ii').text(result.cards_Medium[8]);
+		$('#jj').text(result.cards_Medium[9]);
+		$('#aaa').text(result.cards_Hard[0]);
+		$('#bbb').text(result.cards_Hard[1]);
+		$('#ccc').text(result.cards_Hard[2]);
+		$('#ddd').text(result.cards_Hard[3]);
+		$('#eee').text(result.cards_Hard[4]);
+		$('#fff').text(result.cards_Hard[5]);
+		$('#ggg').text(result.cards_Hard[6]);
+		$('#hhh').text(result.cards_Hard[7]);
+		$('#iii').text(result.cards_Hard[8]);
+		$('#jjj').text(result.cards_Hard[9]);
 	})
 })
 
