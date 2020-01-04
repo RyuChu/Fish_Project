@@ -184,7 +184,16 @@ guess.on('click', function () {
 						if (result.events !== undefined) {
 							console.log(result.events.newCardEvent.returnValues, '新增卡片成功')
 
-							alert("取得卡片");
+							if (reward == 1) alert("恭喜獲得 白帶魚 !!!");
+							else if (reward == 2) alert("恭喜獲得 沙丁魚 !!!");
+							else if (reward == 3) alert("恭喜獲得 虱目魚 !!!");
+							else if (reward == 4) alert("恭喜獲得 秋刀魚 !!!");
+							else if (reward == 5) alert("恭喜獲得 竹莢魚 !!!");
+							else if (reward == 6) alert("恭喜獲得 剝皮魚 !!!");
+							else if (reward == 7) alert("恭喜獲得 臭肚魚 !!!");
+							else if (reward == 8) alert("恭喜獲得 魷魚 !!!");
+							else if (reward == 9) alert("恭喜獲得 龍蝦 !!!");
+							else if (reward == 10) alert("恭喜獲得 鎖管 !!!");
 						}
 						else {
 							alert("取得失敗");
@@ -202,7 +211,16 @@ guess.on('click', function () {
 						if (result.events !== undefined) {
 							console.log(result.events.newCardEvent.returnValues, '新增卡片成功')
 
-							alert("取得卡片");
+							if (reward == 11) alert("恭喜獲得 土魠魚 !!!");
+							else if (reward == 12) alert("恭喜獲得 白鯧魚 !!!");
+							else if (reward == 13) alert("恭喜獲得 赤魚 !!!");
+							else if (reward == 14) alert("恭喜獲得 海鱺 !!!");
+							else if (reward == 15) alert("恭喜獲得 鬼頭刀 !!!");
+							else if (reward == 16) alert("恭喜獲得 曼波魚 !!!");
+							else if (reward == 17) alert("恭喜獲得 旗魚 !!!");
+							else if (reward == 18) alert("恭喜獲得 鯖魚 !!!");
+							else if (reward == 19) alert("恭喜獲得 鱈魚 !!!");
+							else if (reward == 20) alert("恭喜獲得 鱸魚 !!!");
 						}
 						else {
 							alert("取得失敗");
@@ -220,7 +238,16 @@ guess.on('click', function () {
 						if (result.events !== undefined) {
 							console.log(result.events.newCardEvent.returnValues, '新增卡片成功')
 
-							alert("取得卡片");
+							if (reward == 11) alert("恭喜獲得 金鱗魚 !!!");
+							else if (reward == 12) alert("恭喜獲得 紅皮刀 !!!");
+							else if (reward == 13) alert("恭喜獲得 粗皮鯛 !!!");
+							else if (reward == 14) alert("恭喜獲得 野生烏魚 !!!");
+							else if (reward == 15) alert("恭喜獲得 雀鯛 !!!");
+							else if (reward == 16) alert("恭喜獲得 隆頭鸚哥魚 !!!");
+							else if (reward == 17) alert("恭喜獲得 黑鮪 !!!");
+							else if (reward == 18) alert("恭喜獲得 蝦蛄 !!!");
+							else if (reward == 19) alert("恭喜獲得 蘇眉 !!!");
+							else if (reward == 20) alert("恭喜獲得 鰻魚 !!!");
 						}
 						else {
 							alert("取得失敗");
